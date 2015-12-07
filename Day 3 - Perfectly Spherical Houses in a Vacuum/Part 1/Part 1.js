@@ -1,6 +1,5 @@
 var fs = require("fs");
 
-var total = 0;
 var holder_x = [];
 var holder_y = [];
 var current_x = 0;
@@ -30,8 +29,7 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 		if(j == holder_x.length) {
 			holder_x.push(current_x);
 			holder_y.push(current_y);
-			total++;
 		}
 	}
-	console.log("The total is: " + (total + 1));
+	console.log("The total is: " + holder_x.length);
 });
