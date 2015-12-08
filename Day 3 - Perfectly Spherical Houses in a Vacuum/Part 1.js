@@ -1,9 +1,8 @@
-var fs = require("fs");
-
-var holder_x = [];
-var holder_y = [];
-var current_x = 0;
-var current_y = 0;
+var fs = require("fs"),
+	holder_x = [],
+	holder_y = [],
+	current_x = 0,
+	current_y = 0;
 
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }

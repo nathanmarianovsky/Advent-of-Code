@@ -1,6 +1,5 @@
-var fs = require("fs");
-
-var total = 0;
+var fs = require("fs"),
+	total = 0;
 
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
