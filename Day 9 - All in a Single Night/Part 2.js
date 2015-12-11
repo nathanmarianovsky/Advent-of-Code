@@ -84,6 +84,5 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 	var permuted = permutator(destinations);
 	var possibilities = all_distances(permuted, distances);
 	possibilities.sort();
-	possibilities.reverse();
-	console.log("The shortest distance is: " + possibilities[0]);
+	console.log("The shortest distance is: " + possibilities[possibilities.length - 1]);
 });
