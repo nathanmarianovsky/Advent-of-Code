@@ -2,8 +2,8 @@ var fs = require("fs"),
 	destinations = [],
 	distances = [];
 
-var permutator = function(inputArr) {
-  var results = [];
+var permutator = function(input_arr) {
+  	var results = [];
 
 	function permute(arr, memo) {
 	    var cur, memo = memo || [];
@@ -18,7 +18,7 @@ var permutator = function(inputArr) {
 	    return results;
 	}
 
-  	return permute(inputArr);
+  	return permute(input_arr);
 };
 
 var all_distances = function(permuted, distances) {
