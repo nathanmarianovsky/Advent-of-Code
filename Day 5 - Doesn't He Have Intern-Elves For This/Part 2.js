@@ -1,6 +1,8 @@
+// Declare the necessary variables
 var fs = require("fs"),
 	total = 0;
 
+// Read the file and parse. For each word that passes the conditions to be considered "nice", add one to total. The solution corresponds to total in the end.
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	var collection = data.split("\n");
