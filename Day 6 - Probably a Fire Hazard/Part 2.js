@@ -1,7 +1,9 @@
+// Declare the necessary variables
 var fs = require("fs"),
 	total = 0,
 	holder = [];
 
+// Preallocate the grid for the problem.
 for(var i = 0; i < 1000; i++) {
 	for(var j = 0; j < 1000; j++) {
 		var obj = {
@@ -13,6 +15,7 @@ for(var i = 0; i < 1000; i++) {
 	}
 }
 
+// Read the file and parse. For each line execute the command for the points of interest by changing the predefined grid. The solution corresponds to totaling the "state" property of all objects in the grid.
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	var collection = data.split("\n");
