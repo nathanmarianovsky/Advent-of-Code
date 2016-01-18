@@ -1,6 +1,8 @@
+// Declare the necessary variables
 var fs = require("fs"),
 	total = 0;
 
+// Read the file and parse. For each set of dimensions calculate the needed length and add it to the total. The solution corresponds to the total in the end.
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	var collection = data.split("\n");
