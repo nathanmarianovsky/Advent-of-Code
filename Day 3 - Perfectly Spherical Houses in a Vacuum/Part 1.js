@@ -1,9 +1,11 @@
+// Declare the necessary variables
 var fs = require("fs"),
 	holder_x = [],
 	holder_y = [],
 	current_x = 0,
 	current_y = 0;
 
+// Read the file and parse. For each direction check to see if the point has already been visited before. If not, add it. The solution corresponds to the number of unique points visited.
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	holder_x.push(current_x);
