@@ -1,5 +1,7 @@
+// Declare the necessary variables
 var fs = require("fs");
 	
+// Define the ideal Aunt Sue	
 var ideal = {
 	"children": 3,
 	"cats": 7,
@@ -13,6 +15,7 @@ var ideal = {
 	"perfumes": 1
 };
 
+// Count the number of matches some Aunt Sue has against the ideal one.
 var check = (obj, ideal) => {
 	for(var key in ideal) {
 		if(((obj["first_prop_name"] == key) && (obj["first_prop_val"] == ideal[key])) || ((obj["second_prop_name"] == key) && (obj["second_prop_val"] == ideal[key])) || ((obj["third_prop_name"] == key) && (obj["third_prop_val"] == ideal[key]))) { 
@@ -22,6 +25,7 @@ var check = (obj, ideal) => {
 	return obj;
 };
 
+// Read the file and parse. Create an array containing all of the Aunt Sues and compare them all to the ideal one. The solution corresponds to the number of Aunt Sue with the most matches. 
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	var holder = [],
