@@ -1,7 +1,9 @@
+// Declare the necessary variables
 var fs = require("fs"),
 	destinations = [],
 	distances = [];
 
+// Creates an array of all possible permutations.
 var permutator = function(input_arr) {
   	var results = [];
 
@@ -21,6 +23,7 @@ var permutator = function(input_arr) {
   	return permute(input_arr);
 };
 
+// Computes all of the distances for each possible permutation.
 var all_distances = function(permuted, distances) {
 	var holder = [];
 	for(var l = 0; l < permuted.length; l++) {
@@ -39,6 +42,7 @@ var all_distances = function(permuted, distances) {
 	return holder;
 };
 
+// Read the file and parse. Create all possible permutations where a number will identify a unique destination. Then all possible distances are computed. The solution corresponds to the longest distance.
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	var collection = data.split("\n");
