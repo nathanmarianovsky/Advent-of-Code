@@ -1,5 +1,7 @@
+// Declare the necessary variables
 var input = "3113322113";
 
+// Given a string create a new string based on the rules of 'look and say'.
 var look_and_say = function(param) {
 	var result = "";
 	if(param.length > 0) {
@@ -30,6 +32,7 @@ var look_and_say = function(param) {
 	return result;
 };
 
+// Apply the 'look and say' rules 50 times. The solution corresponds to the length of the result attained from the 50th iteration.
 var first = look_and_say(input);
 for(var i = 0; i < 49; i++) {
 	first = look_and_say(first);
