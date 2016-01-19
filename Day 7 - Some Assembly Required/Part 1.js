@@ -1,6 +1,8 @@
+// Declare the necessary variables
 var fs = require("fs"),
 	holder = [];
 
+// Move all wires that have a value to current and remove it from connections.
 var current_var = (connections, current) => {
 	for(var i = 0; i < connections.length; i++) {
 		if(connections[i]["value"] !== "" && !isNaN(connections[i]["value"])) {
@@ -11,6 +13,7 @@ var current_var = (connections, current) => {
 	return current;
 };
 
+// Given the values in current, if enough information is available, a wire in connections obtains a value.
 var update = (connections, current) => {
 	for(var i = 0; i < connections.length; i++) {
 		for(var j = 0; j < current.length; j++) {
@@ -37,6 +40,7 @@ var update = (connections, current) => {
 	return connections;
 };
 
+// Read the file and parse. For each line create an object that contains the necessary information, and call on update and current_var to update the connections so that the final values are attained. The solution corresponds to the value of the wire 'a'.
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	var collection = data.split("\n");
