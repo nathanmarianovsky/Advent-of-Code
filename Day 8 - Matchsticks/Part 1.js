@@ -1,5 +1,7 @@
+// Declare the necessary variables
 var fs = require("fs");
 
+// The literal and memory totals are changed according to the given string.
 var scan_string = function(param, total) {
 	param = param.slice(1, param.length - 1);
 	total["literal"] += 2;
@@ -25,6 +27,7 @@ var scan_string = function(param, total) {
 	}
 };
 
+// Read the file and parse. For each string determine the literal and memory lengths and add it to the total. The solution corresponds to the total literal length minus memory length.
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	var total = {
