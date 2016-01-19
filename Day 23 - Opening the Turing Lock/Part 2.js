@@ -1,11 +1,14 @@
+// Declare the necessary variables
 var fs = require("fs");
 
+// Define type object to call on different actions based on the instructions.
 var type = {
 	"hlf": function(obj) { obj["value"] = Math.floor(obj["value"] / 2); },
 	"tpl": function(obj) { obj["value"] = obj["value"] * 3; },
 	"inc": function(obj) { obj["value"]++; }
 };
 
+// Read the file and parse. Execute the instructions per line on the registers where register a starts at one and b at zero. The solution corresponds to the value in register b at the end.
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	var a = {
