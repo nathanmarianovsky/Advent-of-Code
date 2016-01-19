@@ -1,6 +1,8 @@
+// Declare the necessary variables
 var fs = require("fs"),
 	counter = 0;
 
+// Read the file and parse. Literally parse through the whole string, determine the numbers, and add them to the counter. The solution corresponds to the counter.
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	for(var i = 0; i < data.length;) {
