@@ -1,6 +1,8 @@
+// Declare the necessary variables
 var fs = require("fs"),
 	total_sec = 2503;
 
+// Creates a sorted array of the distances each reindeer flies in the allowed time.
 var distances = (arr_of_obj, total_sec) => {
 	var container = [];
 	for(var i = 0; i < arr_of_obj.length; i++) {
@@ -19,6 +21,7 @@ var distances = (arr_of_obj, total_sec) => {
 	return container;
 };
 
+// Read the file and parse. Create an array containing objects representing the reindeers and calculate the distances for all of them. The solution corresponds to the highest distance.
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	var collection = data.split("\n");

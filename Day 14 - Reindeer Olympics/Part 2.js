@@ -1,6 +1,8 @@
+// Declare the necessary variables
 var fs = require("fs"),
 	total_sec = 2503;
 
+// Calculates the distance traveled by a reindeer in an allowed time.
 var distance_in_time = (obj, current_time) => {
 	var total_time = obj["fly_time"] + obj["rest_time"],
 		cycles = Math.floor(current_time / total_time),
@@ -9,6 +11,7 @@ var distance_in_time = (obj, current_time) => {
 	return (remainder >= obj["fly_time"] ? travel += obj["speed"] * obj["fly_time"] : travel += obj["speed"] * remainder);
 };
 
+// Calculates the total points each reindeer attains given the total allowed time. 
 var traveler = (arr_of_obj, total_sec) => {
 	for(var i = 1; i <= total_sec; i++) {
 		for(var j = 0; j < arr_of_obj.length; j++) {
@@ -28,6 +31,7 @@ var traveler = (arr_of_obj, total_sec) => {
 	return arr_of_obj;
 };
 
+// Read the file and parse. Create an array containing the reindeers and call on traveler to count the points for each one. The solution corresponds to the highest amount of points.
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	var collection = data.split("\n");
