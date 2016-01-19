@@ -1,8 +1,10 @@
+// Declare the necessary variables
 var fs = require("fs"),
 	holder = [],
 	names = [],
 	totals = [];
 
+// Creates an array of all possible permutations.
 var permutator = input_arr => {
   	var results = [];
 
@@ -22,6 +24,7 @@ var permutator = input_arr => {
   	return permute(input_arr);
 };
 
+// Read the file and parse. Create an array containing all of the changes in happiness according to a pair of people. Find all possible permutations of arrangements and count the happiness for each one. The solution corresponds to the highest happiness change.
 fs.readFile("input.txt", "utf8", function(err, data) {
 	if(err) { throw err; }
 	var collection = data.split("\n");
