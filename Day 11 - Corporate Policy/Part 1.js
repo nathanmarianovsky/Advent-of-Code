@@ -30,7 +30,7 @@ var input = "hepxcrrq",
 	"z": 25
 };
 
-// Checks whether the given password meets the requirements
+// Checks whether the given password meets the requirements.
 var check = password => {
 	var straight = false,
 		forbidden = false,
@@ -56,7 +56,7 @@ var check = password => {
 	return ((straight === true) && (forbidden === false) && (counter >= 2));
 };
 
-// Driver function to determine the next password that passes the necessary requirements
+// Driver function to determine the next password that passes the necessary requirements.
 var next_driver = password => {
 	var new_pass = next(password);
 	if(!check(new_pass)) {
@@ -65,10 +65,10 @@ var next_driver = password => {
 	return new_pass;
 };
 
-// String prototype function to replace a specific character in a string at a particular index
+// String prototype function to replace a specific character in a string at a particular index.
 String.prototype.replaceAt=function(index, character) { return this.substr(0, index) + character + this.substr(index+character.length); }
 
-// Produces the next password based on the rules of incrementing strings
+// Produces the next password based on the rules of incrementing strings.
 var next = (password, position) => {
 	var current = "",
 		new_pass = "";
@@ -116,7 +116,7 @@ var next = (password, position) => {
 	return new_pass;
 };
 
-// Produces the next letter in the alphabet given a current one
+// Produces the next letter in the alphabet given a current one.
 var next_letter = current => {
 	var value = alphabet[current],
 		next = "";
@@ -124,5 +124,5 @@ var next_letter = current => {
 	return next;
 };
 
-// Outputs the next password
+// Outputs the next password.
 console.log(next_driver(input));
