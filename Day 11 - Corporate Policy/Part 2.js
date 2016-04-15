@@ -125,4 +125,4 @@ var next_letter = current => {
 };
 
 // Outputs the next password.
-console.log(next_driver(input));
+console.log("Next Password: " + next_driver(input));
