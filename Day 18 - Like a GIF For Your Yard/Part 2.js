@@ -24,40 +24,50 @@ var step_driver = (holder, steps) => {
 var step = holder => {
 	var final_arr = [];
 	holder.forEach(light => {
-		var around = neighbors(light, holder);
-		if(light.status == "on") {
-			if(around.on == 2 || around.on == 3) {
-				var obj = {
-					"x": light.x,
-					"y": light.y,
-					"status": "on"
-				};
-			}
-			else {
-				var obj = {
-					"x": light.x,
-					"y": light.y,
-					"status": "off"
-				};
-			}
+		if((light.x == 0 && light.y == 0) || (light.x == 99 && light.y == 0) || (light.x == 0 && light.y == 99) || (light.x == 99 && light.y == 99)) {
+			var obj = {
+				"x": light.x,
+				"y": light.y,
+				"status": "on"
+			};
 			final_arr.push(obj);
 		}
 		else {
-			if(around.on == 3) {
-				var obj = {
-					"x": light.x,
-					"y": light.y,
-					"status": "on"
-				};
+			var around = neighbors(light, holder);
+			if(light.status == "on") {
+				if(around.on == 2 || around.on == 3) {
+					var obj = {
+						"x": light.x,
+						"y": light.y,
+						"status": "on"
+					};
+				}
+				else {
+					var obj = {
+						"x": light.x,
+						"y": light.y,
+						"status": "off"
+					};
+				}
+				final_arr.push(obj);
 			}
 			else {
-				var obj = {
-					"x": light.x,
-					"y": light.y,
-					"status": "off"
-				};
+				if(around.on == 3) {
+					var obj = {
+						"x": light.x,
+						"y": light.y,
+						"status": "on"
+					};
+				}
+				else {
+					var obj = {
+						"x": light.x,
+						"y": light.y,
+						"status": "off"
+					};
+				}
+				final_arr.push(obj);
 			}
-			final_arr.push(obj);
 		}
 	});
 	return final_arr;
@@ -90,6 +100,7 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 		for(var i = 0; i < tmp.length; i++) {
 			var status = "";
 			tmp[i] == "#" ? status = "on" : status = "off";
+			if((i == 0 && count == 0) || (i == 99 && count == 0) || (i == 0 && count == 99) || (i == 99 && count == 99)) { status = "on"; }
 			var obj = {
 				"x": i,
 				"y": count,
