@@ -10,6 +10,7 @@ Then, animate your grid in steps, where each step decides the next configuration
 
 For example, in a simplified 6x6 grid, the light marked A has the neighbors numbered 1 through 8, and the light marked B, which is on an edge, only has the neighbors marked 1 through 5:
 
+| | | | | | |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | 1 | B | 5 | . | . | . |
 | 2 | 3 | 4 | . | . | . |
@@ -28,6 +29,7 @@ All of the lights update simultaneously; they all consider the same current stat
 Here's a few steps from an example configuration of another 6x6 grid:
 
 Initial state: <br />
+| | | | | | |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | . | \# | . | \# | . | \# |
 | . | . | . | \# | \# | . |
@@ -37,6 +39,7 @@ Initial state: <br />
 | \# | \# | \# | \# | . | . |
 
 After 1 step: <br />
+| | | | | | |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | . | . | \# | \# | . | . |
 | . | . | \# | \# | . | \# |
@@ -46,6 +49,7 @@ After 1 step: <br />
 | \# | . | \# | \# | . | . |
 
 After 2 steps: <br />
+| | | | | | |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | . | . | \# | \# | \# | . |
 | . | . | . | . | . | . |
@@ -55,6 +59,7 @@ After 2 steps: <br />
 | . | \# | . | . | . | . |
 
 After 3 steps: <br />
+| | | | | | |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | . | . | . | \# | . | . |
 | . | . | . | . | . | . |
@@ -64,6 +69,7 @@ After 3 steps: <br />
 | . | . | . | . | . | . |
 
 After 4 steps: <br />
+| | | | | | |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | . | . | . | . | . | . |
 | . | . | . | . | . | . |
@@ -81,6 +87,7 @@ In your grid of 100x100 lights, given your initial configuration, how many light
 You flip the instructions over; Santa goes on to point out that this is all just an implementation of Conway's Game of Life. At least, it was, until you notice that something's wrong with the grid of lights you bought: four lights, one in each corner, are stuck on and can't be turned off. The example above will actually run like this:
 
 Initial state: <br />
+| | | | | | |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | \# | \# | . | \# | . | \# |
 | . | . | . | \# | \# | . |
@@ -90,6 +97,7 @@ Initial state: <br />
 | \# | \# | \# | \# | . | \# |
 
 After 1 step: <br />
+| | | | | | |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | \# | . | \# | \# | . | \# |
 | \# | \# | \# | \# | . | \# |
@@ -99,6 +107,7 @@ After 1 step: <br />
 | \# | . | \# | \# | \# | \# |
 
 After 2 steps: <br />
+| | | | | | |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | \# | . | . | \# | . | \# |
 | \# | . | . | . | . | \# |
@@ -108,6 +117,7 @@ After 2 steps: <br />
 | \# | \# | . |\# | \# | \# |
 
 After 3 steps: <br />
+| | | | | | |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | \# | . | . | . | \# | \# |
 | \# | \# | \# |\# | . | \# |
@@ -117,6 +127,7 @@ After 3 steps: <br />
 | \# | \# | \# | \# | . | \# |
 
 After 4 steps: <br />
+| | | | | | |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | \# | . | \# | \# | \# | \# |
 | \# | . | . | . | . | \# |
@@ -126,6 +137,7 @@ After 4 steps: <br />
 | \# | . | \# | . | . | \# |
 
 After 5 steps: <br />
+| | | | | | |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 | \# | \# | . | \# | \# | \# |
 | . | \# | \# | . | . | \# |
