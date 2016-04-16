@@ -180,6 +180,7 @@ var battle = (player, boss) => {
 	return status;
 };
 
+// Returns a positive value if the right player cost is higher than the left one.
 var compare = (left, right) => {
 	return right.player.cost - left.player.cost; 
 };
