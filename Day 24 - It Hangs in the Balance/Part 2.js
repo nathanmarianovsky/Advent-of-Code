@@ -23,7 +23,7 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var holder = [],
         breakups = [],
-	   collection = data.split("\n");
+	    collection = data.split("\n");
 	collection.splice(collection.length - 1, 1);
 	collection = collection.map(elem => parseInt(elem));
     subsets(collection, collection.reduce((a,b) => { return a + b; }) / 4);
