@@ -62,7 +62,6 @@ var activate_effect = (player, boss, effect) => {
 		}
 		else { player.hit_points = -1; }
 	}
-	return [player, boss, effect];
 };
 
 // Simulates a single turn between a player and boss.
@@ -72,10 +71,7 @@ var turn = (player, boss, attacker, effects, magic) => {
 	effects.forEach(iter => {
 		if(iter.num == 0 && iter.name == "Shield") { player.armor = 0; }
 		if(iter.num >= 0) { 
-			outcome = activate_effect(player, boss, iter); 
-			player = outcome[0];
-			boss = outcome[1];
-			iter = outcome[2];
+			activate_effect(player, boss, iter);
 		}
 		iter.num--;
 	});
@@ -102,16 +98,13 @@ var turn = (player, boss, attacker, effects, magic) => {
 				"status": "unpaid",
 				"num": 1
 			};
-			outcome = activate_effect(player, boss, obj);
-			player = outcome[0];
-			boss = outcome[1];
+			activate_effect(player, boss, obj);
 		}
 	}
 	else if(attacker == "boss") {
 		player.armor >= boss.damage ? damage = 1 : damage = boss.damage - player.armor;
 		player.hit_points -= damage;
 	}
-	return [player, boss, effects];
 };
 
 // Simulates a battle between a player and a boss.
@@ -120,13 +113,9 @@ var battle = (player, boss, moves) => {
 		outcome = [],
 		count = 0;
 	while(player.hit_points > 0 && boss.hit_points > 0 && (count / 2) < moves.length) {
-		count % 2 == 0 ? outcome = turn(player, boss, "player", effects, moves[count / 2]) : outcome = turn(player, boss, "boss", effects);
-		player = outcome[0];
-		boss = outcome[1];
-		effects = outcome[2];
+		count % 2 == 0 ? turn(player, boss, "player", effects, moves[count / 2]) : turn(player, boss, "boss", effects);
 		count++;
 	}
-	return [player, boss];
 };
 
 // Generates the possible battle scenarios based on the previous input. If the input is empty, then the default moves are returned.
@@ -224,22 +213,22 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 				"used": 0
 			};
 			var moves = iter.name;
-			var outcome = battle(player, opponent, moves);
-			if(outcome[0].hit_points > 0 && outcome[1].hit_points <= 0) {
+			battle(player, opponent, moves);
+			if(player.hit_points > 0 && opponent.hit_points <= 0) {
 				var obj = {
 					"name": moves,
 					"status": "WON",
-					"used": outcome[0].used,
+					"used": player.used,
 					"player": player,
 					"boss": opponent
 				};
 				holder.push(obj);
 			}
-			else if(outcome[0].hit_points > 0 && outcome[1].hit_points > 0) {
+			else if(player.hit_points > 0 && opponent.hit_points > 0) {
 				var obj = {
 					"name": moves,
 					"status": "UNKNOWN",
-					"used": outcome[0].used,
+					"used": player.used,
 					"player": player,
 					"boss": opponent
 				};
