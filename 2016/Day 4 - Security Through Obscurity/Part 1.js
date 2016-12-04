@@ -29,7 +29,7 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 					}
 				}
 				else {
-					var tmp = arr[i].split("[");
+					var tmp = arr[i].split("["),
 						sectord_id = parseInt(tmp[0]),
 						checksum = tmp[1].slice(0,tmp[1].length - 1);
 					alphabet.sort((lhs, rhs) => {
