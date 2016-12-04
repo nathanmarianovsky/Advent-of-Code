@@ -53,9 +53,7 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 				if(i != arr.length - 1) {
 					var list = arr[i].split("");
 					for(var k = 0; k < list.length; k++) {
-						for(var w = 0; w < sectord_id; w++) {
-							list[k] = evolution(list[k]);
-						}
+						for(var w = 0; w < sectord_id; w++) { list[k] = evolution(list[k]); }
 						name += list[k];
 					}
 					name += " ";
