@@ -17,7 +17,6 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 		var sides = container[i].split("  ");
 		sides = sides.filter(Number);
 		sides = sides.map(current => parseInt(current));
-		console.log(sides);
 		if(sides.length > 0) {
 			if(check(sides[0], sides[1], sides[2])) { counter++; }
 		}
