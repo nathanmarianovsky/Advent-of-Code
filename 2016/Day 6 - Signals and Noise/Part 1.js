@@ -1,5 +1,5 @@
 // Declare the necessary variables
-var fs = require("fs");
+var fs = require("fs"),
 	holder = [],
 	message = "";
 
