@@ -9,8 +9,8 @@ While it seems chaotic, a nearby morale-boosting poster explains, the layout is 
 1. Find x*x + 3*x + 2*x*y + y + y*y.
 2. Add the office designer's favorite number (your puzzle input).
 3. Find the binary representation of that sum; count the number of bits that are 1.
-- If the number of bits that are 1 is even, it's an open space.
-- If the number of bits that are 1 is odd, it's a wall.
+  * If the number of bits that are 1 is even, it's an open space.
+  * If the number of bits that are 1 is odd, it's a wall.
 
 For example, if the office designer's favorite number were 10, drawing walls as # and open spaces as ., the corner of the building containing 0,0 would look like this:
 
