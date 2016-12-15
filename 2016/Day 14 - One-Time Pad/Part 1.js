@@ -1,6 +1,7 @@
 // Declare the necessary variables
 var md5 = require("md5"),
 	input = "qzyelonm",
+	past = [],
 	container = [];
 
 // Returns the first character that forms a triplet in str.
@@ -20,11 +21,21 @@ var get_char = str => {
 var driver = () => {
 	var count = 0;
 	while(container.length != 64) {
-		var str = md5(input + count),
-			value = get_char(str);
+		var str = "";
+		if(past[count] != undefined) { str = past[count]; }
+		else {
+			str = md5(input + count);
+			past[count] = str;
+		}
+		var value = get_char(str);
 		if(value != "") {
 			for(var p = 1; p <= 1000; p++) {
-				var next_str = md5(input + (count + p));
+				if(past[count+p] != undefined) { next_str = past[count+p]; }
+				else {
+					var tmp = count + p;
+					var next_str = md5(input + tmp);
+					past[count+p] = next_str;
+				}
 				if(next_str.indexOf(value + value + value + value + value) != -1) {
 					container.push(input + count);
 					break;
