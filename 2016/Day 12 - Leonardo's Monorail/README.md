@@ -19,12 +19,9 @@ The jnz instruction moves relative to itself: an offset of -1 would continue at 
 
 For example:
 
-- cpy 41 a
-- inc a
-- inc a
-- dec a
-- jnz a 2
-- dec a
+<p align=center>
+ 	<img src="sample.png">
+</p>
 
 The above code would set register a to 41, increase its value by 2, decrease its value by 1, and then skip the last dec a (because a is not zero, so the jnz a 2 skips it), leaving register a at 42. When you move past the last instruction, the program halts.
 
