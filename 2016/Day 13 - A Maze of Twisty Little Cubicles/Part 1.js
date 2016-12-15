@@ -1,6 +1,5 @@
 // Declare the necessary variables
-var fs = require("fs"),
-	favorite = 1350,
+var favorite = 1350,
 	all = [],
 	paths = [],
 	start = {
