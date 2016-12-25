@@ -30,16 +30,3 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 	count += Math.max(0, 4294967295 - previous);
 	console.log("The number of allowed IP's by the blacklist is " + count + ".");
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
