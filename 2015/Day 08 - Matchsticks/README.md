@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 Space on the sleigh is limited this year, and so Santa will be bringing his list as a digital copy. He needs to know how much space it will take up when stored.
 
@@ -19,7 +19,7 @@ Disregarding the whitespace in the file, what is the number of characters of cod
 
 For example, given the four strings above, the total number of characters of string code (2 + 5 + 10 + 6 = 23) minus the total number of characters in memory for string values (0 + 3 + 7 + 1 = 11) is 23 - 11 = 12.
 
-#Part 2
+# Part 2
 
 Now, let's go the other way. In addition to finding the number of characters of code, you should now encode each code representation as a new string and find the number of characters of the new encoded representation, including the surrounding double quotes.
 

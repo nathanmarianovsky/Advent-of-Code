@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 In years past, the holiday feast with your family hasn't gone so well. Not everyone gets along! This year, you resolve, will be different. You're going to find the optimal seating arrangement and avoid all those awkward conversations.
 
@@ -31,7 +31,7 @@ After trying every other seating arrangement in this hypothetical scenario, you 
 
 What is the total change in happiness for the optimal seating arrangement of the actual guest list?
 
-#Part 2
+# Part 2
 
 In all the commotion, you realize that you forgot to seat yourself. At this point, you're pretty apathetic toward the whole thing, and your happiness wouldn't really go up or down regardless of who you sit next to. You assume everyone else would be just as ambivalent about sitting next to you, too.
 

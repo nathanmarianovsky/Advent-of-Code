@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 Santa's Accounting-Elves need help balancing the books after a recent order. Unfortunately, their accounting software uses a peculiar storage format. That's where you come in.
 
@@ -15,7 +15,7 @@ You will not encounter any strings containing numbers.
 
 What is the sum of all numbers in the document?
 
-#Part 2
+# Part 2
 
 Uh oh - the Accounting-Elves have realized that they double-counted everything red.
 

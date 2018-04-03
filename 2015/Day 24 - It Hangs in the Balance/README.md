@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 It's Christmas Eve, and Santa is loading up the sleigh for this year's deliveries. However, there's one small problem: he can't get the sleigh to balance. If it isn't balanced, he can't defy physics, and nobody gets presents this year.
 
@@ -32,7 +32,7 @@ Of these, although 10 9 1 has the smallest quantum entanglement (90), the config
 
 What is the quantum entanglement of the first group of packages in the ideal configuration?
 
-#Part 2
+# Part 2
 
 That's weird... the sleigh still isn't balancing.
 

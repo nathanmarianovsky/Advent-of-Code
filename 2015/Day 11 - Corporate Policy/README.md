@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 Santa's previous password expired, and he needs help choosing a new one.
 
@@ -22,6 +22,6 @@ For example:
 
 Given Santa's current password (your puzzle input), what should his next password be?
 
-#Part 2
+# Part 2
 
 Santa's password expired again. What's the next one?

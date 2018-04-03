@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 Little Henry Case got a new video game for Christmas. It's an RPG, and he's stuck on a boss. He needs to know what equipment to buy at the shop. He hands you the controller.
 
@@ -51,7 +51,7 @@ In this scenario, the player wins! (Barely.)
 
 You have 100 hit points. The boss's actual stats are in your puzzle input. What is the least amount of gold you can spend and still win the fight?
 
-#Part 2
+# Part 2
 
 Turns out the shopkeeper is working with the boss, and can persuade you to buy whatever items he wants. The other rules still apply, and he still only has one of each item.
 

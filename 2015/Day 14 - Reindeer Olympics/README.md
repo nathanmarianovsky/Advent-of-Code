@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 This year is the Reindeer Olympics! Reindeer can fly at high speeds, but must rest occasionally to recover their energy. Santa would like to know which of his reindeer is fastest, and so he has them race.
 
@@ -15,7 +15,7 @@ In this example, after the 1000th second, both reindeer are resting, and Comet i
 
 Given the descriptions of each reindeer (in your puzzle input), after exactly 2503 seconds, what distance has the winning reindeer traveled?
 
-#Part 2
+# Part 2
 
 Seeing how reindeer move in bursts, Santa decides he's not pleased with the old scoring system.
 
