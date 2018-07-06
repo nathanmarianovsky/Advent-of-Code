@@ -13,7 +13,7 @@ The strength of a bridge is the sum of the port types in each component. For exa
 For example, suppose you had the following components:
 
 <p align=center>
- 	<img src="img/sample.png">
+ 	<img src="sample.png">
 </p> 
 
 With them, you could make the following valid bridges:
