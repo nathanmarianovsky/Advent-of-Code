@@ -4,15 +4,13 @@ var fs = require("fs"),
 	message = "";
 
 // Read the file and parse. Construct the column arrays and determine the most common character in each.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
-	var container = data.split("\n"),
+	var container = data.split("\n").slice(0, data.split("\n").length - 1),
 		columns = container[0].length;
 	for(var p = 0; p < columns; p++) { holder.push([]); }
 	container.forEach(line => {
-		if(line.length > 0) {
-			for(var k = 0; k < columns; k++) { holder[k].push(line[k]); }
-		}
+		for(var k = 0; k < columns; k++) { holder[k].push(line[k]); }
 	});
 	for(var j = 0; j < columns; j++) {
 		var current = holder[j],
@@ -34,14 +32,14 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 			}
 		}
 		alphabet.sort((lhs, rhs) => {
-			if(lhs.count < rhs.count) { return 1; }
-			else if(lhs.count > rhs.count) { return -1; }
+			if(lhs.count > rhs.count) { return 1; }
+			else if(lhs.count < rhs.count) { return -1; }
 			else {
-				if(lhs.letter < rhs.letter) { return 1; }
+				if(lhs.letter > rhs.letter) { return 1; }
 				else { return -1; }
 			}
 		});
 		message += alphabet[0].letter;
 	}
-	console.log("The error-correction version of the message is " + message + ".");
+	console.log("The original message that Santa is trying to send is " + message + ".");
 });

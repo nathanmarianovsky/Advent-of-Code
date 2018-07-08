@@ -28,7 +28,7 @@ var change_direction = path => {
 };
 
 // Read the file and parse. For each instruction calculate the changes in east and north, check if the point has been visited before, and return the first such point.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split(", "),
 		presence = "missing";

@@ -3,7 +3,7 @@ var fs = require("fs"),
 	restrictions = [];
 
 // Read the file and parse. Collect all of the restrictions into an array and iterate through starting with 0 to return the first integer that is not restricted.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n");
 	container.forEach(restriction => {

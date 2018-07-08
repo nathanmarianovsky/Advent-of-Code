@@ -28,20 +28,23 @@ var find_result = (str, start) => {
 };
 
 // Loops through until the whole password is generated.
-var count = 0;
-while(output.some(elem => elem == undefined)) {
-	count = find_result(input, count + 1);
-	var extraction = extract(input + count.toString());
-	if(extraction[0] >= 0 && extraction[0] <= 7 && extraction[0] !== NaN) {
-		if(output[extraction[0]] == undefined) {
-			output[extraction[0]] = extraction[1];
+var main = () => {
+	var count = 0,
+		password = "";
+	while(output.some(elem => elem == undefined)) {
+		count = find_result(input, count + 1);
+		var extraction = extract(input + count.toString());
+		if(extraction[0] >= 0 && extraction[0] <= 7 && extraction[0] !== NaN) {
+			if(output[extraction[0]] == undefined) {
+				output[extraction[0]] = extraction[1];
+			}
 		}
 	}
-}
+	for(var j = 0; j < output.length; j++) {
+		password += output[j];
+	}
+	console.log("The password for the security door is " + password + ".");
+};
 
-var password = "";
-for(var j = 0; j < output.length; j++) {
-	password += output[j];
-}
-
-console.log("The password for the security door is " + password + ".");
+// Call the main function.
+main();

@@ -19,32 +19,30 @@ var check = str => {
 };
 
 // Read the file and parse. For each line break up the strings from the brackets and analyze the strings. For each string note whether it is outside or inside and change the condition accordingly.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
-	var container = data.split("\n");
+	var container = data.split("\n").slice(0, data.split("\n").length - 1);
 	container.forEach(line => {
-		if(line.length > 0) {
-			var condition = false;
-			for(var i = 0; i < line.length; i++) {
-				var expression = ""
-				while((line[i] != "[" && line[i] != "]") && i < line.length) {
-					expression += line[i];
-					i++;
-				}
-				if(line[i] == "[" || i == line.length) {
-					if(check(expression)) { 
-						condition = true;
-					}
-				}
-				else if(line[i] == "]") {
-					if(check(expression)) {
-						condition = false;
-						break;
-					}
+		var condition = false;
+		for(var i = 0; i < line.length; i++) {
+			var expression = ""
+			while((line[i] != "[" && line[i] != "]") && i < line.length) {
+				expression += line[i];
+				i++;
+			}
+			if(line[i] == "[" || i == line.length) {
+				if(check(expression)) { 
+					condition = true;
 				}
 			}
-			if(condition == true) { count++; }
+			else if(line[i] == "]") {
+				if(check(expression)) {
+					condition = false;
+					break;
+				}
+			}
 		}
+		if(condition == true) { count++; }
 	});
 	console.log("The number of IPs that support TLS is exactly " + count + ".");
 });

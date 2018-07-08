@@ -25,12 +25,16 @@ var find_result = (str, start) => {
 };
 
 // Loops through until the whole password is generated.
-var count = 0,
-	extraction = "";
-for(var k = 0; k < 8; k++) {
-	count = find_result(input, count + 1);
-	extraction = extract(input + count.toString());
-	output += extraction;
-}
+var main = () => {
+	var count = 0,
+		extraction = "";
+	for(var k = 0; k < 8; k++) {
+		count = find_result(input, count + 1);
+		extraction = extract(input + count.toString());
+		output += extraction;
+	}
+	console.log("The password for the security door is " + output + ".");
+};
 
-console.log("The password for the security door is " + output + ".");
+// Call the main function.
+main();

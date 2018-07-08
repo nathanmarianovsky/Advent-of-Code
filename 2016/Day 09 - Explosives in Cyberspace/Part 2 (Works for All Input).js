@@ -44,7 +44,7 @@ var sum = str => {
 };
 
 // Read the file and return the 'sum' of the data.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	console.log("The decompressed length of the file using the improved format is " + sum(data) + ".");
 });

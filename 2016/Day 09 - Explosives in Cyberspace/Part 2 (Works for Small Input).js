@@ -39,7 +39,7 @@ var mutation = str => {
 };
 
 // Read the file and parse. Iterate through string and perform the necessary actions to get the decompressed string.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	for(var i = 0; i < data.length; i++) {
 		if(data[i] == "(") {
@@ -72,5 +72,5 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 		}
 		else if(data[i] != "\n") { count++; }
 	}
-	console.log(count);
+	console.log("The decompressed length of the file using the improved format is " + count + ".");
 });

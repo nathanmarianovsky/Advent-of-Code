@@ -10,7 +10,7 @@ var check = (side1, side2, side3) => {
 };
 
 // Read the file and parse. For each triplet of numbers check whether they form a valid triangle and keep count of the ones that do.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n");
 	for(var i = 0; i < container.length; i++) {

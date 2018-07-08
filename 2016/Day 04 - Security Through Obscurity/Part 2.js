@@ -35,36 +35,34 @@ var fs = require("fs"),
 var evolution = state => {
 	var value = parseInt((_.invert(dictionary))[state]);
 	if(value == 26) { return dictionary[1]; }
-	else { return dictionary[value+1]; }
+	else { return dictionary[value + 1]; }
 };
 
 // Read the file and parse. For each line determine the real name of the room and extract the id of the one containing keywords "north" and "pole".
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
-	var container = data.split("\n");
+	var container = data.split("\n").slice(0, data.split("\n").length - 1);
 	container.forEach(line => {
-		if(line.length > 0) {
-			var name = "",
-				arr = line.split("-"),
-				tmp = arr[arr.length-1].split("["),
-				sectord_id = parseInt(tmp[0]),
-				checksum = tmp[1].slice(0,tmp[1].length - 1);
-			for(var i = 0; i < arr.length; i++) {
-				if(i != arr.length - 1) {
-					var list = arr[i].split("");
-					for(var k = 0; k < list.length; k++) {
-						for(var w = 0; w < sectord_id; w++) { list[k] = evolution(list[k]); }
-						name += list[k];
-					}
-					name += " ";
+		var name = "",
+			arr = line.split("-"),
+			tmp = arr[arr.length-1].split("["),
+			sectord_id = parseInt(tmp[0]),
+			checksum = tmp[1].slice(0, tmp[1].length - 1);
+		for(var i = 0; i < arr.length; i++) {
+			if(i != arr.length - 1) {
+				var list = arr[i].split("");
+				for(var k = 0; k < list.length; k++) {
+					for(var w = 0; w < sectord_id; w++) { list[k] = evolution(list[k]); }
+					name += list[k];
 				}
+				name += " ";
 			}
-			var obj = {
-				name: name,
-				id: sectord_id
-			};
-			jar.push(obj);
 		}
+		var obj = {
+			name: name,
+			id: sectord_id
+		};
+		jar.push(obj);
 	});
 	jar.forEach(elem => {
 		if(elem.name.search("north") != -1 && elem.name.search("pole") != -1) {

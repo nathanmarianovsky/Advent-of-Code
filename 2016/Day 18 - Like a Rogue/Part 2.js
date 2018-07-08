@@ -10,7 +10,7 @@ var result = (point1, point2, point3) => {
 };
 
 // Read the file and parse. Iterate through and determine each new row based on the rules and return how many end up safe.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	data = data.split("\n")[0];
 	var collection = data.split(""),

@@ -1,11 +1,11 @@
 // Declare the necessary variables
 var md5 = require("md5"),
 	input = "njfxhljp",
-	golden = ["b","c","d","e","f"];
+	golden = ["b", "c", "d", "e", "f"];
 
 // Simulates all walks possible on the grid and returns the length of the shortest one.
 var main = () => {
-	var paths = [{x:0,y:0,str:""}];
+	var paths = [{x: 0, y: 0, str: ""}];
 	while(!paths.some(elem => elem.x == 3 && elem.y == 3)) {
 		var arr = [];
 		paths.forEach(position => {

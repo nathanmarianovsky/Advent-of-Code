@@ -3,7 +3,7 @@ var fs = require("fs"),
 	container = "";
 
 // Read the file and parse. Iterate through string and perform the necessary actions to get the decompressed string.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	for(var i = 0; i < data.length; i++) {
 		if(data[i] == "(") {

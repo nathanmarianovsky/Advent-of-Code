@@ -10,7 +10,7 @@ var favorite = 1350,
 	};
 
 // Convert a decimal to binary.
-var bin = input => { return (input >>> 0).toString(2); };
+var bin = input => (input >>> 0).toString(2);
 
 // Returns an array containing all indices of where 'substr' appears in 'str'.
 var indices = (str, substr) => {

@@ -59,7 +59,7 @@ var evolution = (current, path) => {
 };
 
 // Read the file and parse. For each each line of instructions evolve the start state accordingly and record the states at the end of each line.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n"),
 		start = 5;
