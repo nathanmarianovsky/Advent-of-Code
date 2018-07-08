@@ -2,7 +2,7 @@
 var fs = require("fs");
 
 // Read the file and parse. For each row sort the list and add to the checksum. 
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var	container = data.split("\n"),
 		sum = 0;

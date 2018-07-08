@@ -3,7 +3,7 @@ var fs = require("fs"),
 	math = require("mathjs");
 
 // Read the file and parse. At each step compare the digits and add if they match.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var	container = data.split(""),
 		sum = 0;

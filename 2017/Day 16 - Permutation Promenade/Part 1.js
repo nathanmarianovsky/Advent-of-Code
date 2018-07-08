@@ -2,7 +2,7 @@
 var fs = require("fs");
 
 // Read the commands, perform the dance moves, and read off the order in which the programs appear at the end.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var commands = data.split("\n")[0].split(","),
 		list = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p"];

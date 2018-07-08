@@ -11,7 +11,7 @@ var direction = (layout, pos, arrival) => {
 };
 
 // Organize the grid from the given input. Follow the path and count along the way.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var grid = (data.split("\n").slice(0, data.split("\n").length - 1)).map(elem => elem.split("")),
 		previous = {

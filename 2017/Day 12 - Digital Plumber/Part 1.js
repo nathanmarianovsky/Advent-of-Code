@@ -15,7 +15,7 @@ var counter = (id, list, known) => {
 };
 
 // Read the file and parse. Iterate through and count the number of nodes connected to program 0.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n").slice(0, data.split("\n").length - 1),
 		list = [];

@@ -107,7 +107,7 @@ var advance = (grid, rules) => {
 };
 
 // Read and parse the rules. Then iterate accordingly and return the number of pixels on after 5 iterations.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var input = data.split("\n").slice(0, data.split("\n").length - 1),
 		rules = [],

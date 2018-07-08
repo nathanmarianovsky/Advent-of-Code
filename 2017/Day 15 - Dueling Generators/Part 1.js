@@ -11,7 +11,7 @@ var bin = nMask => {
 };
 
 // Read the initial start values, iterate through 40 million times, and add to the counter each time a pair has the 16 lowest 16 bits match. 
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n"),
 		startA = parseInt(container[0].split(" ")[4]),

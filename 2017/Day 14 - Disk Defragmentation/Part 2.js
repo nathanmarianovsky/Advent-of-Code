@@ -65,14 +65,12 @@ var main = () => {
 	var arr = [],
 		sizes = [],
 		counted = [];
-	var TMP = [];
 	for(var i = 0; i < 128; i++) {
 		var hash = knot(input + "-" + i),
 			bin = "";
 		for(var j = 0; j < hash.length; j++) {
 			bin += hex2bin(hash[j]).slice(hex2bin(hash[j]).length - 4);
 		}
-		TMP.push(bin);
 		arr.push(bin.split(""));
 	}
 	for(var i = 0; i < 128; i++) {

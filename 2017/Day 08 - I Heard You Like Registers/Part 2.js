@@ -4,16 +4,16 @@ var fs = require("fs"),
 
 // Object helps convert the given strings into operators.
 var conversion = {
-	"<": (x,y) => { return x < y },
-	">": (x,y) => { return x > y },
-	"<=": (x,y) => { return x <= y },
-	">=": (x,y) => { return x >= y },
-	"==": (x,y) => { return x == y },
-	"!=": (x,y) => { return x != y }
+	"<": (x,y) => x < y,
+	">": (x,y) => x > y,
+	"<=": (x,y) => x <= y,
+	">=": (x,y) => x >= y,
+	"==": (x,y) => x == y,
+	"!=": (x,y) => x != y
 };
 
 // Read the file and parse. Perform the necessary operations and find the largest value.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n"),
 		completion = [];
@@ -30,8 +30,6 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 			completion.push(db[key]);
 		}
 	});
-	completion.sort((lhs,rhs) => {
-		return rhs - lhs;
-	});
+	completion.sort((lhs,rhs) => rhs - lhs);
 	console.log("The largest value in any register at any given moment is " + completion[0] + ".");
 });

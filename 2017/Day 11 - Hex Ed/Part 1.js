@@ -40,7 +40,7 @@ var check = (value, steps) => {
 };
 
 // Read the file and parse. Iterate through the given steps and reduce the number of steps required while walking. 
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var input = data.split("\n")[0].split(","),
 		steps = [];

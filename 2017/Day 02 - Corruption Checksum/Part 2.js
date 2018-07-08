@@ -2,7 +2,7 @@
 var fs = require("fs");
 
 // Read the file and parse. For each row check all combinations until the pair is found and add to the sum.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var	container = data.split("\n"),
 		sum = 0;

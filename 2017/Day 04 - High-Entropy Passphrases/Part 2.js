@@ -4,9 +4,7 @@ var fs = require("fs");
 // Returns false if a given array does not contain duplicates accounting for anagrams.
 var duplicates = holder => {
     var sizearr = [];
-    holder.sort((a,b) => {
-        return a.length - b.length;
-    });
+    holder.sort((a,b) => a.length - b.length);
     var min = holder[0].length,
         max = holder[holder.length-1].length;
     for(var p = min; p <= max; p++) {
@@ -33,16 +31,14 @@ var duplicates = holder => {
 };
 
 // Read the file and parse. For each row check for duplicates and keep a count of the valid passphrases.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var	container = data.split("\n"),
 		sum = 0;
 	container.splice(container.length - 1,1);
 	container.forEach(iter => {
 		var arr = iter.split(" ");
-		if(!duplicates(arr)) { 
-			sum++;; 
-		}
+		if(!duplicates(arr)) { sum++; }
 	});
 	console.log("The number of valid passphrases is " + sum + ".");
 });

@@ -37,7 +37,7 @@ var advance = distribution => {
 };
 
 // Read the file and parse. While the configuration has not been seen before keep performing distribution cycles and keep track of the number.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n")[0].split("\t").map(elem => parseInt(elem)),
 		steps = 0;

@@ -2,7 +2,7 @@
 var fs = require("fs");
 
 // Read and parse the grid. Start at the middle and keep moving, modifying the grid as needed, and return the number of nodes that were infected.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var grid = data.split("\n").slice(0, data.split("\n").length - 1).map(line => line.split("")),
 		current = {x: Math.floor(grid.length / 2), y: Math.floor(grid.length / 2), dir: "u"},

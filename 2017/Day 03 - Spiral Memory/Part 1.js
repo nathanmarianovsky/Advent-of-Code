@@ -8,7 +8,7 @@ var layer = value => {
 		var holder = 0,
 			estimate = (Math.floor(Math.sqrt(value)) + 1);
 		estimate % 2 == 0 ? holder = estimate + 1 : holder = estimate;
-		return (holder - 1)/2;
+		return (holder - 1) / 2;
 	}
 };
 

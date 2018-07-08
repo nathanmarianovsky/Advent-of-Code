@@ -95,7 +95,7 @@ var copy = obj => {
 };
 
 // Read and parse the instructions. Execute step by step until both programs terminate and return the count of the number of times a value was sent by program 1.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n").slice(0, data.split("\n").length - 1),
 		instructions = [],

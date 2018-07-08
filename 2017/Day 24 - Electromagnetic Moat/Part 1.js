@@ -53,7 +53,7 @@ var step = start => {
 };
 
 // Read and parse the components. Build all possible bridges step by step, calculate the strength for all and return the maximal value.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var components = data.split("\n").slice(0, data.split("\n").length - 1).map(line => line.split("/").map(elem => parseInt(elem))),
 		current = [],

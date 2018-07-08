@@ -32,7 +32,7 @@ var copy = obj => {
 };
 
 // Read the file and parse. For each picosecond take the necessary steps and add to the counter if caught. Keep iterating until a delay is found in which the packet goes undetected. 
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n").slice(0, data.split("\n").length - 1),
 		initial = [];

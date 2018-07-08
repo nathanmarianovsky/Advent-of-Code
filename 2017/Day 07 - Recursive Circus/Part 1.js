@@ -3,7 +3,7 @@ var fs = require("fs"),
 	tree = [];
 
 // Read the file and parse. Add the data into the tree and transverse to find the bottom. 
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n");
 	container.splice(container.length - 1,1);

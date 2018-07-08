@@ -4,16 +4,16 @@ var fs = require("fs"),
 
 // Object helps convert the given strings into operators.
 var conversion = {
-	"<": (x,y) => { return x < y },
-	">": (x,y) => { return x > y },
-	"<=": (x,y) => { return x <= y },
-	">=": (x,y) => { return x >= y },
-	"==": (x,y) => { return x == y },
-	"!=": (x,y) => { return x != y }
+	"<": (x,y) => x < y,
+	">": (x,y) => x > y,
+	"<=": (x,y) => x <= y,
+	">=": (x,y) => x >= y,
+	"==": (x,y) => x == y,
+	"!=": (x,y) => x != y
 };
 
 // Read the file and parse. Perform the necessary operations and find the largest value.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n"),
 		count = undefined;
@@ -28,9 +28,7 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 	});
 	var iterator = Object.keys(db);
 	for(let key of iterator) {
-		if(count == undefined) {
-			count = db[key];
-		}
+		if(count == undefined) { count = db[key]; }
 		else {
 			if(db[key] > count) { count = db[key]; }
 		}

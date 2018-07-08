@@ -40,7 +40,7 @@ var check = (value, steps) => {
 };
 
 // Read the file and parse. Iterate through the given steps and reduce the number of steps required while walking. Now keep a tab on the lengths per step and return the biggest value obtained. 
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var input = data.split("\n")[0].split(","),
 		steps = [],
@@ -50,8 +50,6 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 		steps = check(input[i], steps); 
 		lengths.push(steps.length);
 	}
-	lengths.sort((a,b) => {
-		return b - a;
-	});
+	lengths.sort((a,b) => b - a);
 	console.log("The furthest the child process traveled required " + lengths[0] + " steps.");
 });

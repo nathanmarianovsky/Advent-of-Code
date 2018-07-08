@@ -2,7 +2,7 @@
 var fs = require("fs");
 
 // Read the file and parse. Iterate through the string and keep count along the way.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n"),
 		str = container[0];

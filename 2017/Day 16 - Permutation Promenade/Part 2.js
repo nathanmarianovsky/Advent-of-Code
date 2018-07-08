@@ -20,7 +20,7 @@ var copy = obj => {
 };
 
 // Read the command, perform the dance moves a billion times, and read off the order in which the programs appear at the end.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var commands = data.split("\n")[0].split(","),
 		container = [];

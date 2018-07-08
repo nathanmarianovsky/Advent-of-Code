@@ -2,7 +2,7 @@
 var fs = require("fs");
 
 // Read the given data about the particles. Simulate each turn and after enough turns return the number of remaining particles.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var input = data.split("\n").slice(0, data.split("\n").length - 1),
 		list = [];

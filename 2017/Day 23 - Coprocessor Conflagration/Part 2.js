@@ -2,7 +2,7 @@
 var fs = require("fs");
 
 // Read and parse the instructions. Process requires understanding the specific input given.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var container = data.split("\n").slice(0, data.split("\n").length - 1),
 		commands = [],

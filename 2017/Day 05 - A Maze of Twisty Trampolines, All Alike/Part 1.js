@@ -2,7 +2,7 @@
 var fs = require("fs");
 
 // Read the file and parse. Transverse through the given commands and keep track of the steps.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var	container = data.split("\n").map(elem => parseInt(elem)),
 		sum = 0;
