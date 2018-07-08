@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 The halls open into an interior plaza containing a large kinetic sculpture. The sculpture is in a sealed enclosure and seems to involve a set of identical spherical capsules that are carried to the top and allowed to bounce through the maze of spinning pieces.
 
@@ -24,7 +24,8 @@ If, however, you wait until time=5 to push the button, then when the capsule rea
 
 However, your situation has more than two discs; you've noted their positions in your puzzle input. What is the first time you can press the button to get a capsule?
 
-#Part 2
+
+# Part 2
 
 After getting the first capsule (it contained a star! what great fortune!), the machine detects your success and begins to rearrange itself.
 

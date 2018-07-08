@@ -11,6 +11,7 @@ For example, suppose you have containers of size 20, 15, 10, 5, and 5 liters. If
 
 Filling all containers entirely, how many different combinations of containers can exactly fit all 150 liters of eggnog?
 
+
 # Part 2
 
 While playing with all the containers in the kitchen, another load of eggnog arrives! The shipping and receiving department is requesting as many containers as you can spare.

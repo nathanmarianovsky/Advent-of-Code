@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 You're done scanning this part of the network, but you've left traces of your presence. You need to overwrite some disks with random-looking data to cover your tracks and update the local security system with a new checksum for those disks.
 
@@ -48,6 +48,7 @@ In this example, the correct checksum would therefore be 01100.
 
 The first disk you have to fill has length 272. Using the initial state in your puzzle input, what is the correct checksum?
 
-#Part 2
+
+# Part 2
 
 The second disk you have to fill has length 35651584. Again using the initial state in your puzzle input, what is the correct checksum for this disk?

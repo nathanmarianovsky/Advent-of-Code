@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 In order to communicate securely with Santa while you're on this mission, you've been using a one-time pad that you generate using a pre-agreed algorithm. Unfortunately, you've run out of keys in your one-time pad, and so you need to generate some more.
 
@@ -22,7 +22,8 @@ So, using our example salt of abc, index 22728 produces the 64th key.
 
 Given the actual salt in your puzzle input, what index produces your 64th one-time pad key?
 
-#Part 2
+
+# Part 2
 
 Of course, in order to make this process even more secure, you've also implemented key stretching.
 

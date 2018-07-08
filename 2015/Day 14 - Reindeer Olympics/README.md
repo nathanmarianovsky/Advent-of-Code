@@ -15,6 +15,7 @@ In this example, after the 1000th second, both reindeer are resting, and Comet i
 
 Given the descriptions of each reindeer (in your puzzle input), after exactly 2503 seconds, what distance has the winning reindeer traveled?
 
+
 # Part 2
 
 Seeing how reindeer move in bursts, Santa decides he's not pleased with the old scoring system.

@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 Something is jamming your communications with Santa. Fortunately, your signal is only partially jammed, and protocol in situations like this is to switch to a simple repetition code to get the message through.
 
@@ -29,7 +29,8 @@ The most common character in the first column is e; in the second, a; in the thi
 
 Given the recording in your puzzle input, what is the error-corrected version of the message being sent?
 
-#Part 2
+
+# Part 2
 
 Of course, that would be the message - if you hadn't agreed to use a modified repetition code instead.
 

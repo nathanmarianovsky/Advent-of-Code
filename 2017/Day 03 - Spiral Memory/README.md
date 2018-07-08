@@ -19,6 +19,7 @@ For example:
 
 How many steps are required to carry the data from the square identified in your puzzle input all the way to the access port?
 
+
 # Part 2
 
 As a stress test on the system, the programs here clear the grid and then store the value 1 in square 1. Then, in the same allocation order as shown above, they store the sum of the values in all adjacent squares, including diagonals.

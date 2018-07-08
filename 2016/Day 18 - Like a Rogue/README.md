@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 As you enter this room, you hear a loud click! Some of the tiles in the floor here seem to be pressure plates for traps, and the trap you just triggered has run out of... whatever it tried to do to you. You doubt you'll be so lucky next time.
 
@@ -44,6 +44,7 @@ In ten rows, this larger example has 38 safe tiles.
 
 Starting with the map in your puzzle input, in a total of 40 rows (including the starting row), how many safe tiles are there?
 
-#Part 2
+
+# Part 2
 
 How many safe tiles are there in a total of 400000 rows?

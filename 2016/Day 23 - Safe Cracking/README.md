@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 This is one of the top floors of the nicest tower in EBHQ. The Easter Bunny's private office is here, complete with a safe hidden behind a painting, and who wouldn't hide a star in a safe behind a painting?
 
@@ -37,7 +37,8 @@ The rest of the electronics seem to place the keypad entry (the number of eggs, 
 
 What value should be sent to the safe?
 
-#Part 2
+
+# Part 2
 
 The safe doesn't open, but it does make several angry noises to express its frustration.
 

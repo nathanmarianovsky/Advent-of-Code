@@ -14,6 +14,7 @@ For example:
 
 Starting with the digits in your puzzle input, apply this process 40 times. What is the length of the result?
 
+
 # Part 2
 
 Now, starting again with the digits in your puzzle input, apply this process 50 times. What is the length of the new result?

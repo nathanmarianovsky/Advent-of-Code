@@ -32,6 +32,7 @@ Of these, although 10 9 1 has the smallest quantum entanglement (90), the config
 
 What is the quantum entanglement of the first group of packages in the ideal configuration?
 
+
 # Part 2
 
 That's weird... the sleigh still isn't balancing.

@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 You're trying to access a secure vault protected by a 4x4 grid of small rooms connected by doors. You start in the top-left room (marked S), and you can access the vault (marked V) once you reach the bottom-right room:
 
@@ -28,7 +28,8 @@ Passcodes actually used by Easter Bunny Vault Security do allow access to the va
 
 Given your vault's passcode, what is the shortest path (the actual path, not just the length) to reach the vault?
 
-#Part 2
+
+# Part 2
 
 You're curious how robust this security solution really is, and so you decide to find longer and longer paths which still provide access to the vault. You remember that paths always end the first time they reach the bottom-right room (that is, they can never pass through it, only end in it).
 

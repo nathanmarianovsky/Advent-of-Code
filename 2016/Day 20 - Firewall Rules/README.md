@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 You come upon a factory in which many robots are zooming around handing small microchips to each other.
 You'd like to set up a small hidden computer here so you can use it to get back into the network later. However, the corporate firewall only allows communication with certain external IP addresses.
@@ -15,6 +15,7 @@ The blacklist specifies ranges of IPs (inclusive of both the start and end value
 
 Given the list of blocked IPs you retrieved from the firewall (your puzzle input), what is the lowest-valued IP that is not blocked?
 
-#Part 2
+
+# Part 2
 
 How many IPs are allowed by the blacklist?

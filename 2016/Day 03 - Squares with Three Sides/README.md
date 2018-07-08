@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 Now that you can think clearly, you move deeper into the labyrinth of hallways and office furniture that makes up this part of Easter Bunny HQ. This must be a graphic design department; the walls are covered in specifications for triangles.
 
@@ -10,7 +10,8 @@ In a valid triangle, the sum of any two sides must be larger than the remaining 
 
 In your puzzle input, how many of the listed triangles are possible?
 
-#Part 2
+
+# Part 2
 
 Now that you've helpfully marked up their design documents, it occurs to you that triangles are specified in groups of three vertically. Each set of three numbers in a column specifies a triangle. Rows are unrelated.
 

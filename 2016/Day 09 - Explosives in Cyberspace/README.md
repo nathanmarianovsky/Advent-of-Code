@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 Wandering around a secure area, you come across a datalink port to a new part of the network. After briefly scanning it for interesting files, you find one file in particular that catches your attention. It's compressed with an experimental format, but fortunately, the documentation for the format is nearby.
 
@@ -17,7 +17,8 @@ For example:
 
 What is the decompressed length of the file (your puzzle input)? Don't count whitespace.
 
-#Part 2
+
+# Part 2
 
 Apparently, the file actually uses version two of the format.
 

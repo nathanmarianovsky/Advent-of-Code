@@ -28,6 +28,7 @@ Multiplying these together (68 * 80 * 152 * 76, ignoring calories for now) resul
 
 Given the ingredients in your kitchen and their properties, what is the total score of the highest-scoring cookie you can make?
 
+
 # Part 2
 
 Your cookie recipe becomes wildly popular! Someone asks if you can make another recipe that has exactly 500 calories per cookie (so they can use it as a meal replacement). Keep the rest of your award-winning process the same (100 teaspoons, same ingredients, same scoring system).

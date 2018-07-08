@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 The computer system you're breaking into uses a weird scrambling function to store its passwords. It shouldn't be much trouble to create your own scrambled password so you can add it to the system; you just have to implement the scrambler.
 
@@ -26,7 +26,8 @@ After these steps, the resulting scrambled password is decab.
 
 Now, you just need to generate a new scrambled password and you can access the system. Given the list of scrambling operations in your puzzle input, what is the result of scrambling abcdefgh?
 
-#Part 2
+
+# Part 2
 
 You scrambled the password correctly, but you discover that you can't actually modify the password file on the system. You'll need to un-scramble one of the existing passwords by reversing the scrambling process.
 

@@ -44,6 +44,7 @@ Your goal is to find the total score for all groups in your input. Each group is
 
 What is the total score for all groups in your input?
 
+
 # Part 2
 
 Now, you're ready to remove the garbage.

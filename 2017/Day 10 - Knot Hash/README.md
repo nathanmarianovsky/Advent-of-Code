@@ -39,6 +39,7 @@ In this example, the first two numbers in the list end up being 3 and 4; to chec
 
 However, you should instead use the standard list size of 256 (with values 0 to 255) and the sequence of lengths in your puzzle input. Once this process is complete, what is the result of multiplying the first two numbers in the list?
 
+
 # Part 2
 
 The logic you've constructed forms a single round of the Knot Hash algorithm; running the full thing requires many of these rounds. Some input and output processing is also required.
