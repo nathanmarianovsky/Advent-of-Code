@@ -235,13 +235,8 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 				holder.push(obj);
 			}
 		});
-		holder.sort((left, right) => {
-			return right.used - left.used;
-		});
+		holder.sort((left, right) => right.used - left.used);
 	}
-	holder.forEach(elem => {
-		if(elem.status == "WON" && elem.boss.hit_points < 0) { result.push(elem); }
-	});
-	result.sort((left, right) => { return left.used - right.used; });
-	console.log("The least amount of mana required is: " + result[0].used);
+	holder.forEach(elem => { if(elem.status == "WON" && elem.boss.hit_points < 0) { result.push(elem); }});
+	console.log("The least amount of mana required is: " + result.sort((left, right) => left.used - right.used)[0].used);
 });
