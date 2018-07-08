@@ -4,10 +4,9 @@ var fs = require("fs"),
 	distances = [];
 
 // Creates an array of all possible permutations.
-var permutator = function(input_arr) {
+var permutator = input_arr => {
   	var results = [];
-
-	function permute(arr, memo) {
+	var permute = (arr, memo) => {
 	    var cur, memo = memo || [];
 	    for (var i = 0; i < arr.length; i++) {
 	      	cur = arr.splice(i, 1);
@@ -18,20 +17,20 @@ var permutator = function(input_arr) {
 	      	arr.splice(i, 0, cur[0]);
 	    }
 	    return results;
-	}
-
+	};
   	return permute(input_arr);
 };
 
 // Computes all of the distances for each possible permutation.
-var all_distances = function(permuted, distances) {
+var all_distances = (permuted, distances) => {
 	var holder = [];
 	for(var l = 0; l < permuted.length; l++) {
 		var total = 0;
 		for(var i = 0; i < permuted[l].length; i++) {
 			for(var k = 0; k < distances.length; k++) {
 				if(i + 1 != permuted[l].length) {
-					if(((distances[k]["from"] == permuted[l][i]["value"]) && (distances[k]["to"] == permuted[l][i + 1]["value"])) || (distances[k]["to"] == permuted[l][i]["value"]) && (distances[k]["from"] == permuted[l][i + 1]["value"])) {
+					if(((distances[k]["from"] == permuted[l][i]["value"]) && (distances[k]["to"] == permuted[l][i + 1]["value"])) || 
+						(distances[k]["to"] == permuted[l][i]["value"]) && (distances[k]["from"] == permuted[l][i + 1]["value"])) {
 						total += parseInt(distances[k]["value"]);
 					}
 				}
@@ -43,7 +42,7 @@ var all_distances = function(permuted, distances) {
 };
 
 // Read the file and parse. Create all possible permutations where a number will identify a unique destination. Then all possible distances are computed. The solution corresponds to the longest distance.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var collection = data.split("\n");
 	for(var i = 0; i < collection.length; i++) {

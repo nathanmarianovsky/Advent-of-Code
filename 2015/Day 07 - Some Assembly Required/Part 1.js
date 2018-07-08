@@ -41,7 +41,7 @@ var update = (connections, current) => {
 };
 
 // Read the file and parse. For each line create an object that contains the necessary information, and call on update and current_var to update the connections so that the final values are attained. The solution corresponds to the value of the wire 'a'.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var collection = data.split("\n");
 	for(var i = 0; i < collection.length; i++) {

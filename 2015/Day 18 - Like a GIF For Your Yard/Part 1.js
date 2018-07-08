@@ -68,7 +68,10 @@ var neighbors = (current, holder) => {
 	var on_count = 0,
 		off_count = 0;
 	holder.forEach(iter => {
-		if((iter.x == current.x && iter.y == current.y + 1) || (iter.x == current.x && iter.y == current.y - 1) || (iter.x == current.x + 1 && iter.y == current.y) || (iter.x == current.x - 1 && iter.y == current.y) || (iter.x == current.x + 1 && iter.y == current.y + 1) || (iter.x == current.x - 1 && iter.y == current.y + 1) || (iter.x == current.x + 1 && iter.y == current.y - 1) || (iter.x == current.x - 1 && iter.y == current.y - 1)) {
+		if((iter.x == current.x && iter.y == current.y + 1) || (iter.x == current.x && iter.y == current.y - 1) || 
+			(iter.x == current.x + 1 && iter.y == current.y) || (iter.x == current.x - 1 && iter.y == current.y) || 
+			(iter.x == current.x + 1 && iter.y == current.y + 1) || (iter.x == current.x - 1 && iter.y == current.y + 1) || 
+			(iter.x == current.x + 1 && iter.y == current.y - 1) || (iter.x == current.x - 1 && iter.y == current.y - 1)) {
 			iter.status == "on" ? on_count++ : off_count++;
 		}
 	});

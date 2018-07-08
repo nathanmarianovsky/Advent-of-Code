@@ -8,7 +8,7 @@ var subsets = (numbers, target, partial) => {
         current = 0, 
         remaining = [];
     partial = partial || [];
-    sum = partial.reduce((a, b) => { return a + b; }, 0);
+    sum = partial.reduce((a, b) => a + b, 0);
     if(sum === target) { assortment.push(partial); }
     if(sum >= target) { return; }
     for (var i = 0; i < numbers.length; i++) {
@@ -27,9 +27,7 @@ fs.readFile("input.txt", "utf8", (err, data) => {
     collection.splice(collection.length - 1, 1);
     collection = collection.map(elem => parseInt(elem));
     subsets(collection, 150);
-    assortment.sort((left, right) => {
-        return left.length - right.length;
-    });
+    assortment.sort((left, right) => left.length - right.length);
     var k = 1,
         min = assortment[0].length;
     for(; k < assortment.length; k++) {

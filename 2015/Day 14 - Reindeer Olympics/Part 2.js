@@ -32,7 +32,7 @@ var traveler = (arr_of_obj, total_sec) => {
 };
 
 // Read the file and parse. Create an array containing the reindeers and call on traveler to count the points for each one. The solution corresponds to the highest amount of points.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var collection = data.split("\n");
 		holder = [];
@@ -51,8 +51,6 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 		}
 	}
 	var new_holder = traveler(holder, total_sec);
-	new_holder.sort(function(left, right) {
-		return left["points"] < right["points"];
-	});
+	new_holder.sort((left, right) => left["points"] < right["points"]);
 	console.log("Most Points: " + holder[0]["points"]);
 });

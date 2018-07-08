@@ -19,18 +19,24 @@ var ideal = {
 var check = (obj, ideal) => {
 	for(var key in ideal) {
 		if((key == "children") || (key == "samoyeds") || (key == "akitas") || (key == "vizslas") || (key == "cars") || (key == "perfumes")) {
-			if(((obj["first_prop_name"] == key) && (obj["first_prop_val"] == ideal[key])) || ((obj["second_prop_name"] == key) && (obj["second_prop_val"] == ideal[key])) || ((obj["third_prop_name"] == key) && (obj["third_prop_val"] == ideal[key]))) { 
+			if(((obj["first_prop_name"] == key) && (obj["first_prop_val"] == ideal[key])) || 
+				((obj["second_prop_name"] == key) && (obj["second_prop_val"] == ideal[key])) || 
+				((obj["third_prop_name"] == key) && (obj["third_prop_val"] == ideal[key]))) { 
 				obj["matches"]++; 
 			}
 		}
 		else {
 			if((key == "cats") || (key == "trees")) {
-				if(((obj["first_prop_name"] == key) && (obj["first_prop_val"] > ideal[key])) || ((obj["second_prop_name"] == key) && (obj["second_prop_val"] > ideal[key])) || ((obj["third_prop_name"] == key) && (obj["third_prop_val"] > ideal[key]))) { 
+				if(((obj["first_prop_name"] == key) && (obj["first_prop_val"] > ideal[key])) || 
+					((obj["second_prop_name"] == key) && (obj["second_prop_val"] > ideal[key])) || 
+					((obj["third_prop_name"] == key) && (obj["third_prop_val"] > ideal[key]))) { 
 					obj["matches"]++; 
 				}
 			}
 			else if((key == "pomeranians") || (key == "goldfish")) {
-				if(((obj["first_prop_name"] == key) && (obj["first_prop_val"] < ideal[key])) || ((obj["second_prop_name"] == key) && (obj["second_prop_val"] < ideal[key])) || ((obj["third_prop_name"] == key) && (obj["third_prop_val"] < ideal[key]))) { 
+				if(((obj["first_prop_name"] == key) && (obj["first_prop_val"] < ideal[key])) || 
+					((obj["second_prop_name"] == key) && (obj["second_prop_val"] < ideal[key])) || 
+					((obj["third_prop_name"] == key) && (obj["third_prop_val"] < ideal[key]))) { 
 					obj["matches"]++; 
 				}
 			}
@@ -40,7 +46,7 @@ var check = (obj, ideal) => {
 };
 
 // Read the file and parse. Create an array containing all of the Aunt Sues and compare them all to the ideal one. The solution corresponds to the number of Aunt Sue with the most matches. 
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var holder = [],
 		collection = data.split("\n");
@@ -65,8 +71,6 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 	for(var sue in holder) {
 		check(holder[sue], ideal);
 	}
-	holder.sort(function(left, right) {
-		return left["matches"] > right["matches"];
-	});
+	holder.sort((left, right) => left["matches"] > right["matches"]);
 	console.log("It is Sue #" + holder[holder.length - 1]["sue"]);
 });

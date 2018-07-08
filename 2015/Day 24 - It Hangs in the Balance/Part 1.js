@@ -26,10 +26,8 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 	    collection = data.split("\n");
 	collection.splice(collection.length - 1, 1);
 	collection = collection.map(elem => parseInt(elem));
-    subsets(collection, collection.reduce((a,b) => { return a + b; }) / 3);
-	assortment.sort((left, right) => {
-		return left.length - right.length;
-	});
+    subsets(collection, collection.reduce((a,b) => a + b) / 3);
+	assortment.sort((left, right) => left.length - right.length);
 	var ideal_limit = assortment[0].length,
 		k = 1;
 	for(; k < assortment.length; k++) {
@@ -38,11 +36,9 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 		}
 	}
 	for(var j = 0; j <= k; j++) {
-		var QE = assortment[j].reduce((left, right) => { return left * right; }, 1);
+		var QE = assortment[j].reduce((left, right) => left * right, 1);
 		holder.push(QE);
 	}
-	holder.sort((left, right) => {
-		return left - right;
-	});
+	holder.sort((left, right) => left - right);
 	console.log("The QE of the ideal configuration is: " + holder[0]);
 });

@@ -3,7 +3,7 @@ var fs = require("fs"),
 	total = 0;
 
 // Read the file and parse. For each set of dimensions calculate the needed length and add it to the total. The solution corresponds to the total in the end.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var collection = data.split("\n");
 	for(var i = 0; i < collection.length; i++) {
@@ -12,7 +12,7 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 			for(var j = 0; j < set.length; j++) {
 				set[j] = parseInt(set[j]);
 			}
-			set.sort(function(left, right) {
+			set.sort((left, right) => {
 				if(left > right) { return true; }
 				else { return false; }
 			});

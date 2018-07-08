@@ -8,7 +8,7 @@ var subsets = (numbers, target, partial) => {
         current = 0, 
         remaining = [];
     partial = partial || [];
-    sum = partial.reduce((a, b) => { return a + b; }, 0);
+    sum = partial.reduce((a, b) => a + b, 0);
     if(sum === target) { assortment.push(partial); }
     if(sum >= target) { return; }
     for (var i = 0; i < numbers.length; i++) {

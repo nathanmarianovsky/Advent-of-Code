@@ -2,7 +2,7 @@
 var input = "3113322113";
 
 // Given a string create a new string based on the rules of 'look and say'.
-var look_and_say = function(param) {
+var look_and_say = param => {
 	var result = "";
 	if(param.length > 0) {
 		var iter = 1,

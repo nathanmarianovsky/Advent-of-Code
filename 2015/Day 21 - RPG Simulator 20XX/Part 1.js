@@ -90,24 +90,19 @@ var possibilities = () => {
 	for(var key in weapons) {
 		var current_weapon = weapons[key];
 		var standalone = construct(current_weapon, {}, {}, {});
-		// console.log(key, standalone);
 		holder.push(standalone);
 		for(var iter in armor) {
 			var current_armor = armor[iter];
 			standalone = construct(current_weapon, current_armor, {}, {});
-			// console.log(iter, standalone);
 			holder.push(standalone);
 			for(var cur in rings) {
 				var current_ring1 = rings[cur];
 				standalone = construct(current_weapon, current_armor, current_ring1, {});
-				// console.log(cur, standalone);
 				holder.push(standalone);
 				for(var match in rings) {
-					// if(match == cur) { match++; }
 					if(match != cur) {
 						var current_ring2 = rings[match];
 						standalone = construct(current_weapon, current_armor, current_ring1, current_ring2);
-						// console.log(match, standalone);
 						holder.push(standalone);
 					}
 				}
@@ -116,7 +111,6 @@ var possibilities = () => {
 		for(var cur in rings) {
 			var current_ring1 = rings[cur];
 			standalone = construct(current_weapon, {}, current_ring1, {});
-			// console.log(cur, standalone);
 			holder.push(standalone);
 			for(var match in rings) {
 				if(match == cur) { match++; }
@@ -167,7 +161,6 @@ var battle = (player, boss) => {
 	var count = 0,
 		status = "";
 	while(player.hit_points > 0 && boss.hit_points > 0) {
-		// console.log(player, boss, count);
 		if(count % 2 == 0) {
 			boss = turn(player, boss, "player");
 		}
@@ -181,9 +174,7 @@ var battle = (player, boss) => {
 };
 
 // Returns a positive value if the left player cost is higher than the right one.
-var compare = (left, right) => {
-	return left.player.cost - right.player.cost; 
-};
+var compare = (left, right) => left.player.cost - right.player.cost;
 
 // Read and parse. Create a boss object based on the input file and let all possible players battle out the boss. Then compare all of the players and pick the cheapest one that won.
 fs.readFile("input.txt", "utf8", (err, data) => {

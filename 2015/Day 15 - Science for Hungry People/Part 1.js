@@ -61,6 +61,6 @@ fs.readFile("input.txt", "utf8", (err, data) => {
         capacity <= 0 || durability <= 0 || flavor <= 0 || texture <= 0 ? multiple = 0 : multiple = capacity * durability * flavor * texture;
         if(!results.some(elem => elem === multiple)) { results.push(multiple); }
     });
-    results.sort((left, right) => { return right - left; });
+    results.sort((left, right) => right - left);
     console.log("The total score of the highest-scoring cookie is: " + results[0]);
 });

@@ -66,7 +66,7 @@ var next_driver = password => {
 };
 
 // String prototype function to replace a specific character in a string at a particular index.
-String.prototype.replaceAt=function(index, character) { return this.substr(0, index) + character + this.substr(index+character.length); }
+String.prototype.replaceAt = (index, character) => this.substr(0, index) + character + this.substr(index+character.length);
 
 // Produces the next password based on the rules of incrementing strings.
 var next = (password, position) => {

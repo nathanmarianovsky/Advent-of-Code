@@ -16,7 +16,7 @@ for(var i = 0; i < 1000; i++) {
 }
 
 // Read the file and parse. For each line execute the command for the points of interest by changing the predefined grid. The solution corresponds to the number of objects in the grid with state = "on".
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var collection = data.split("\n");
 	for(var i = 0; i < collection.length; i++) {

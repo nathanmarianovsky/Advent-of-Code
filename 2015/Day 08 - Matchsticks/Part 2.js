@@ -2,7 +2,7 @@
 var fs = require("fs");
 
 // The literal and encoded totals are changed according to the given string.
-var scan_string = function(param, total) {
+var scan_string = (param, total) => {
 	total["encoded"] += 2;
 	for(var j = 0; j < param.length; j++) {
 		if((param[j] == "\"") || (param[j] == "\\")) {
@@ -16,7 +16,7 @@ var scan_string = function(param, total) {
 };
 
 // Read the file and parse. For each string determine the literal and encoded lengths and add it to the total. The solution corresponds to the total encoded length minus literal length.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var total = {
 		"literal": 0,

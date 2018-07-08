@@ -22,9 +22,9 @@ var distances = (arr_of_obj, total_sec) => {
 };
 
 // Read the file and parse. Create an array containing objects representing the reindeers and calculate the distances for all of them. The solution corresponds to the highest distance.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
-	var collection = data.split("\n");
+	var collection = data.split("\n"),
 		holder = [];
 	for(var i = 0; i < collection.length; i++) {
 		if(collection[i].length > 0) {

@@ -70,6 +70,6 @@ fs.readFile("input.txt", "utf8", (err, data) => {
             results.push(obj);
         }
     });
-    results.sort((left, right) => { return right.score - left.score; });
+    results.sort((left, right) => right.score - left.score);
     console.log("The total score of the highest-scoring cookie with 500 calories is: " + results[0].score);
 });

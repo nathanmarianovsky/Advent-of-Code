@@ -7,7 +7,6 @@ var fs = require("fs"),
 // Creates an array of all possible permutations.
 var permutator = input_arr => {
   	var results = [];
-
 	var permute = (arr, memo) => {
 	    var cur, memo = memo || [];
 	    for (var i = 0; i < arr.length; i++) {
@@ -20,12 +19,11 @@ var permutator = input_arr => {
 	    }
 	    return results;
 	};
-
   	return permute(input_arr);
 };
 
 // Read the file and parse. Create an array containing all of the changes in happiness according to a pair of people. Find all possible permutations of arrangements and count the happiness for each one. The solution corresponds to the highest happiness change.
-fs.readFile("input.txt", "utf8", function(err, data) {
+fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var collection = data.split("\n");
 	for(var i = 0; i < collection.length; i++) {
@@ -95,8 +93,6 @@ fs.readFile("input.txt", "utf8", function(err, data) {
 			totals.push(total);
 		}
 	}
-	totals.sort(function(left, right) {
-		return right - left;
-	});
+	totals.sort((left, right) => right - left);
 	console.log("The biggest value is: " + totals[0]);
 });

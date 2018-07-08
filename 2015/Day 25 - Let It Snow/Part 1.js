@@ -2,13 +2,9 @@ var row = 3010,
 	column = 3019,
 	initial = 20151125;
 
-var generator = current => {
-	return (current * 252533) % 33554393;
-};
+var generator = current => (current * 252533) % 33554393;
 
-var necessary = (row, column) => {
-	return (row + column) - 1;
-};
+var necessary = (row, column) => (row + column) - 1;
 
 var decompose = val => {
 	var arr = [];
