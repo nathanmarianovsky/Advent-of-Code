@@ -1,4 +1,4 @@
-#Part 1
+# Part 1
 
 You come upon a column of four floors that have been entirely sealed off from the rest of the building except for a small dedicated lobby. There are some radiation warnings and a big sign which reads "Radioisotope Testing Facility".
 
@@ -100,7 +100,7 @@ In this arrangement, it takes 11 steps to collect all of the objects at the four
 In your situation, what is the minimum number of steps required to bring all of the objects to the fourth floor?
 
 
-#Part 2
+# Part 2
 
 You step into the cleanroom separating the lobby from the isolated area and put on the hazmat suit.
 
