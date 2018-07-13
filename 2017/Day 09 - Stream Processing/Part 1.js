@@ -10,8 +10,8 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 	 	count = 0,
 	 	level = 1;
 	for(var i = 0; i < str.length; i++) {
-		if (str[i] == "!") { i++; }
-		else if (condition && str[i] != ">") {}
+		if(str[i] == "!") { i++; }
+		else if(condition && str[i] != ">") {}
 		else if(str[i] == "<") { condition = true; }
 		else if(str[i] == ">") { condition = false; }
 		else if(str[i] == "{") { count += level++; }

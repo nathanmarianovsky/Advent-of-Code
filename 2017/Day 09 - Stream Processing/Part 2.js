@@ -11,8 +11,8 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 	 	level = 1,
 	 	garbage = 0;
 	for(var i = 0; i < str.length; i++) {
-		if (str[i] == "!") { i++; }
-		else if (condition && str[i] != ">") { garbage++; }
+		if(str[i] == "!") { i++; }
+		else if(condition && str[i] != ">") { garbage++; }
 		else if(str[i] == "<") { condition = true; }
 		else if(str[i] == ">") { condition = false; }
 		else if(str[i] == "{") { count += level++; }

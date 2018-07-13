@@ -11,7 +11,7 @@ var subsets = (numbers, target, partial) => {
     sum = partial.reduce((a, b) => { return a + b; }, 0);
     if(sum === target) { assortment.push(partial); }
     if(sum >= target) { return; }
-    for (var i = 0; i < numbers.length; i++) {
+    for(var i = 0; i < numbers.length; i++) {
         current = numbers[i];
         remaining = numbers.slice(i + 1);
         subsets(remaining, target, partial.concat([current]));

@@ -4,7 +4,7 @@ var fs = require("fs"),
 
 // Given an array of arrays, this returns 1 if list is contained in the array and 0 otherwise. 
 var compare = arr => {
-	if (arr.length == list.length && arr.every((u, i) => u === list[i])) { return 1; }
+	if(arr.length == list.length && arr.every((u, i) => u === list[i])) { return 1; }
 	else { return 0; }
 };
 
