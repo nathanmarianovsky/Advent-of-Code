@@ -1,7 +1,7 @@
 // Declare the necessary variables
 var fs = require("fs");
 
-// Read the file and parse. For each string determine if there are repeating characters, count them, and compute the checksum.
+// Read the file and parse. Iterate through the strings until a pair with a single character difference is found. 
 fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
 	var	container = data.split("\n").map(elem => elem.split("")),
