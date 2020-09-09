@@ -25,7 +25,7 @@ The problem is that many of the claims overlap, causing two or more claims to co
 Visually, these claim the following areas:
 
 <p align=center>
- 	<img src="img/sample1.png">
+ 	<img src="img/sample2.png">
 </p> 
 
 The four square inches marked with X are claimed by both 1 and 2. (Claim 3, while adjacent to the others, does not overlap either of them.)
