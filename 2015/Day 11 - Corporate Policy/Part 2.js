@@ -66,7 +66,7 @@ var next_driver = password => {
 };
 
 // String prototype function to replace a specific character in a string at a particular index.
-String.prototype.replaceAt = (index, character) => this.substr(0, index) + character + this.substr(index+character.length);
+var replaceAt = (password, index, character) => password.substr(0, index) + character + password.substr(index + character.length);
 
 // Produces the next password based on the rules of incrementing strings.
 var next = (password, position) => {
@@ -76,17 +76,17 @@ var next = (password, position) => {
 	position == -1 ? current = password[password.length - 1] : current = password[position];
 	var	new_current = next_letter(current);
 	if(new_current != "switch") {
-		position == -1 ? new_pass = password.replaceAt(password.length - 1, new_current) : new_pass = password.replaceAt(position, new_current);
+		position == -1 ? new_pass = replaceAt(password, password.length - 1, new_current) : new_pass = replaceAt(password, position, new_current);
 	}
 	else {
 		if(position == -1) {
 			new_pass = next(password, password.length - 2);
-			new_pass = new_pass.replaceAt(password.length - 1, "a");
+			new_pass = replaceAt(new_pass, password.length - 1, "a");
 		}
 		else {
 			new_pass = next(password, position - 1);
 			for(var i = position; i < new_pass.length; i++) {
-				new_pass = new_pass.replaceAt(i, "a");
+				new_pass = replaceAt(new_pass, i, "a");
 			}
 		}
 	}
@@ -94,21 +94,21 @@ var next = (password, position) => {
 		if(new_pass[iter] == "i") {
 			new_pass = new_pass.replace("i", "j");
 			for(var i = iter + 1; i < new_pass.length; i++) {
-				new_pass = new_pass.replaceAt(i, "a");
+				new_pass = replaceAt(new_pass, i, "a");
 			}
 			break;
 		}
 		else if(new_pass[iter] == "o") {
 			new_pass = new_pass.replace("o", "p");
 			for(var i = iter + 1; i < new_pass.length; i++) {
-				new_pass = new_pass.replaceAt(i, "a");
+				new_pass = replaceAt(new_pass, i, "a");
 			}
 			break;
 		}
 		else if(new_pass[iter] == "l") {
 			new_pass = new_pass.replace("l", "m");
 			for(var i = iter + 1; i < new_pass.length; i++) {
-				new_pass = new_pass.replaceAt(i, "a");
+				new_pass = replaceAt(new_pass, i, "a");
 			}
 			break;
 		}
