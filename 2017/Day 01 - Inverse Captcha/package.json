@@ -1,10 +1,10 @@
 {
-  "name": "day11",
+  "name": "day1",
   "version": "1.0.0",
   "description": "",
   "main": "Part 1.js",
   "dependencies": {
-    "underscore": "^1.13.1"
+    "mathjs": "^10.0.0"
   },
   "devDependencies": {},
   "scripts": {

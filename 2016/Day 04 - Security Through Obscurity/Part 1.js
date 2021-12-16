@@ -30,7 +30,7 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 			else {
 				var tmp = arr[i].split("["),
 					sectord_id = parseInt(tmp[0]),
-					checksum = tmp[1].slice(0,tmp[1].length - 1);
+					checksum = tmp[1].slice(0,tmp[1].length - 2);
 				alphabet.sort((lhs, rhs) => {
 					if(lhs.count < rhs.count) { return 1; }
 					else if(lhs.count > rhs.count) { return -1; }

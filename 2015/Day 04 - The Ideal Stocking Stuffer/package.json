@@ -1,10 +1,10 @@
 {
-  "name": "day_4",
+  "name": "day4",
   "version": "1.0.0",
   "description": "",
   "main": "Part 1.js",
   "dependencies": {
-    "md5": "^2.0.0"
+    "md5": "^2.3.0"
   },
   "devDependencies": {},
   "scripts": {

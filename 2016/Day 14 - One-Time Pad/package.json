@@ -1,10 +1,10 @@
 {
-  "name": "day_5",
+  "name": "day14",
   "version": "1.0.0",
-  "description": "Finally, you come across an information kiosk with a list of rooms. Of course, the list is encrypted and full of decoy data, but the instructions to decode the list are barely hidden nearby. Better remove the decoy data first.",
+  "description": "",
   "main": "Part 1.js",
   "dependencies": {
-    "md5": "^2.2.1"
+    "md5": "^2.3.0"
   },
   "devDependencies": {},
   "scripts": {
