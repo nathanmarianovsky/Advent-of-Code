@@ -1,5 +1,5 @@
 // Declare the necessary variables
-var fs = require("fs");
+const fs = require("fs");
 
 // Given two objects representing a command in the input this will compare them based on the date.
 var comparison = (lhs, rhs) => {
@@ -26,9 +26,9 @@ var comparison = (lhs, rhs) => {
 // Given an array of integers this will return the index of the position for the largest value.
 var maxIndex = arr => {
     if (arr.length == 0) { return -1; }
-    var max = arr[0],
+    let max = arr[0],
     	maxIndex = 0;
-    for(var i = 1; i < arr.length; i++) {
+    for(let i = 1; i < arr.length; i++) {
         if(arr[i] > max) {
         	maxIndex = i;
             max = arr[i];
@@ -40,13 +40,13 @@ var maxIndex = arr => {
 // Read the file and parse. Organize the commands in a manner such that all minutes are tracked for all guards with a counter for a sleeping status.
 fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
-	var	container = data.split("\n").map(elem => elem.split(" ")),
+	const container = data.split("\n").map(elem => elem.split(" ")),
 		list = [],
 		logs = [],
 		guards = [];
 	container.pop();
 	container.forEach(iter => {
-		var value1 = iter[0].substring(1).split("-"),
+		let value1 = iter[0].substring(1).split("-"),
 			value2 = iter[1].substring(0, 5).split(":");
 		list.push({
 			"year": parseInt(value1[0]),
@@ -58,10 +58,10 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 		});
 	});
 	list.sort(comparison);
-	var iter = 0;
+	let iter = 0;
 	while(iter < list.length) {
 		if(list[iter].action.length == 4) {
-			var commands = [list[iter]],
+			let commands = [list[iter]],
 				subIter = iter + 1;
 			while(subIter < list.length && list[subIter].action.length == 2) {
 				commands.push(list[subIter]);
@@ -71,8 +71,8 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 			iter = subIter;
 		}
 	}
-	for(var i = 0; i < logs.length; i++) {
-		var guard = parseInt(logs[i][0].action[1].substring(1)),
+	for(let i = 0; i < logs.length; i++) {
+		let guard = parseInt(logs[i][0].action[1].substring(1)),
 			guardPos = 0;
 		for(; guardPos < guards.length; guardPos++) {
 			if(guards[guardPos].guard == guard) {
@@ -80,8 +80,8 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 			}
 		}
 		if(guardPos == guards.length) {
-			var minutes = [];
-			for(var k = 0; k < 60; k++) {
+			let minutes = [];
+			for(let k = 0; k < 60; k++) {
 				minutes.push(0);
 			}
 			guards.push({
@@ -90,9 +90,9 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 			});
 		}
 		if(logs[i].length > 1) {
-			for(var actionIter = 1; actionIter < logs[i].length; actionIter++) {
+			for(let actionIter = 1; actionIter < logs[i].length; actionIter++) {
 				if(logs[i][actionIter].action[0] == "falls") {
-					var min = 0;
+					let min = 0;
 					if(logs[i][actionIter].hour == 0) {
 						min = logs[i][actionIter].minute;
 					}
@@ -104,7 +104,7 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 					else {
 						if((logs[i][actionIter].hour != 0 && logs[i][actionIter + 1].hour == 0 && logs[i][actionIter + 1].minute != 0)
 							|| logs[i][actionIter].hour == 0) {
-							var stop = logs[i][actionIter + 1].minute;
+							let stop = logs[i][actionIter + 1].minute;
 							for(; min < stop; min++) {
 								guards[guardPos].minutes[min]++;
 							}
@@ -115,12 +115,12 @@ fs.readFile("input.txt", "utf8", (err, data) => {
 		}
 	}
 	guards.sort((lhs, rhs) => {
-		var sum1 = lhs.minutes.reduce((prev, cur) => prev + cur, 0),
+		let sum1 = lhs.minutes.reduce((prev, cur) => prev + cur, 0),
 			sum2 = rhs.minutes.reduce((prev, cur) => prev + cur, 0);
 		if(sum1 > sum2) { return -1; }
 		else { return 1; }
 	});
-	var index = maxIndex(guards[0].minutes);
+	const index = maxIndex(guards[0].minutes);
 	console.log("The guard that sleeps most is Guard #" + guards[0].guard + ", with minute "
 		+ index + " being his favorite during which to nap. The corresponding product of these is "
 		+ guards[0].guard * index + ".");

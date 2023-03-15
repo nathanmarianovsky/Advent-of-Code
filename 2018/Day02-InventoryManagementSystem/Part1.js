@@ -1,11 +1,11 @@
 // Declare the necessary variables
-var fs = require("fs");
+const fs = require("fs");
 
 // Read the file and parse. For each string determine if there are repeating characters, count them, and compute the checksum.
 fs.readFile("input.txt", "utf8", (err, data) => {
 	if(err) { throw err; }
-	var	container = data.split("\n").map(elem => elem.split("")),
-		arr = [],
+	const container = data.split("\n").map(elem => elem.split(""));
+	let arr = [],
 		index = 0,
 		sum1 = 0,
 		sum2 = 0;
