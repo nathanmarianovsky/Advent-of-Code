@@ -4,7 +4,7 @@
   "description": "",
   "main": "Part 1.js",
   "dependencies": {
-    "mathjs": "^10.0.0"
+    "mathjs": "^15.2.0"
   },
   "devDependencies": {},
   "scripts": {
